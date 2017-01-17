@@ -1,0 +1,12 @@
+Arquivo aluno possui 7  registros !!
+
+Nome Disciplina ------> Quantidade repetida:
+DIREITO---------> 1
+RELA��ES INTERNACIONAIS---------> 1
+ADMINISTRACAO---------> 1
+PEDAGOGIA---------> 1
+MATEM�TICA---------> 1
+SERVICO SOCIAL---------> 1
+BACHARELADO EM CI�NCIA DA COMPUTA��O---------> 1
+------------------------
+
