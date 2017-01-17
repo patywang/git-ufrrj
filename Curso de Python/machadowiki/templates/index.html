@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="static/img/m.png">
+    <title>Machado Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.min.css') }}"></strong>
+    <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.css') }}"></strong>
+  </head>
+  <body style = "background-color: #FFEDC9 !important">
+
+  <div class="container" >
+    <center>
+          <div class="row" style = "padding-top:30px !important">
+
+            <div class="col-md-6 col-md-offset-3">    
+            <br> 
+
+              <img src = "static/img/m16.png"/>
+
+              <br><br>
+              <form action = "{{ url_for('buscar')}}" method = "POST">
+              <div class="input-group">
+                <input class="form-control" type="text" name = "buscador" placeholder="Pesquisar por ..." />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">Buscar</button>
+                </div>
+              </div>
+
+              <div class="checkbox">
+                  <input type="checkbox" name = "machadoSelect" value = "titulo"/><label style = "padding-left: 0px;padding-right: 51px;">Título</label>
+                  <input type="checkbox" name = "machadoSelect" value = "conteudo" /><label style = "padding-left: 0px;padding-right: 51px;">Conteúdo</label> 
+                  <input type="checkbox" name = "machadoSelect" value = "ano"/><label style = "padding-left: 0px;padding-right: 51px;">Ano</label>
+                  <input type="checkbox" name = "machadoSelect" value = "categoria"/><label style = "padding-left: 0px;padding-right: 51px;">Categoria</label>
+                
+              </div>
+            </form>
+
+          
+            </div>
+          </div>  
+
+   </center>
+  </div>
+
+</body>
+    
+</html>

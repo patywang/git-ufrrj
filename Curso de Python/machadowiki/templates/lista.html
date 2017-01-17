@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="static/img/m.png">
+    <title>Machado Wiki - Resultado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.min.css') }}"></strong>
+    <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.css') }}"></strong>
+  </head>
+  <body style = "background-color: #FFEDC9 !important; background-image: url('/static/img/m16.png'); background-repeat: no-repeat; background-position: 855px 150px; background-attachment: fixed;">
+
+  <div class = "row">
+    <div class="col-md-8" style = "padding-left:50px !important" >
+      <br>
+       <b><a href="/">&larr; Voltar</a></b>
+        
+        {%if tamanho == 0%}
+         <div class="page-header"><h4>A pesquisa para <b>{{frase}}</b> não foi encontrada, tente novamente...</h4></div>
+
+        {%elif tamanho == 1%}
+        <div class="page-header"><h4>Foi encontrado <b>{{tamanho}}</b> documento para <b>{{frase}}</b></h4></div>
+
+        {%elif tamanho > 1%}
+        <div class="page-header"><h4>Foram encontrados <b>{{tamanho}}</b> documentos para <b>{{frase}}</b></h4></div>
+
+        {% endif %}
+
+
+        {% for result in resultado %}
+        <div class="page-header">
+          <p><a href = "{{result['url']}}" >[{{result['categoria']}}]{{result['titulo']}}</a></p>
+          <p>{{result['conteudo'][:300]}}...</p>
+        </div>
+        {% endfor %}
+
+        {%if tamanho > 2 %}
+       
+        <div class="row">
+          <div class="col-md-4"><b><a href="/">&larr; Voltar</a></b></div>
+          <div class="col-md-4"><b><a href="#top">&uarr; Topo da página</a></b></div>
+  
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+</body>
+    
+</html>
