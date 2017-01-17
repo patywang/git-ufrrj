@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>MIPS SIMULATOR</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+   
+    <script src="assets/js/chart-master/Chart.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a id="simulador" href="index.html" class="logo"><b>SIMULATOR</b></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- MONTADOR -->
+                    <li class="dropdown">
+                        
+                        <button id="comando-btn" >
+                           
+                            <img src="assets/symbols/ic_send_black_24dp.png">
+                           
+                           
+                        </button>
+                       
+                    </li>
+                    <!-- MONTADOR end -->
+                    <!-- EXECUTE-->
+                    <li class="dropdown"  href="execute.html#" >
+                        
+                        <button id="execute" onclick="atualiza_pagina()" >
+                           
+                            <img src="assets/symbols/ic_play_arrow_black_24dp.png">
+                           
+                        </button>
+
+                        <script src="js/funcoes_html.js"></script>
+                       
+                    </li>
+                    <!-- EXECUTE end -->
+
+                    <!-- PREVIOUS-->
+                    <li class="dropdown">
+                        
+                        <button id="previous-btn" onclick="previous_button()">
+                           
+                            <img src="assets/symbols/ic_skip_previous_black_24dp.png">
+                           
+                        </button>
+                         <script src="js/funcoes_html.js"></script>
+                       
+                    </li>
+                    <!-- PREVIOUS end -->
+
+                    <!-- NEXT-->
+                    <li class="dropdown">
+                        
+                        <button id="next-btn" onclick="next_button()">
+                           
+                            <img src="assets/symbols/ic_skip_next_black_24dp.png">
+                           
+                        </button>
+                         <script src="js/funcoes_html.js"></script>
+                       
+                    </li>
+                    <!-- NEXT end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+           
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+  
+                   <div class="col-md-12">
+                        <div class="content-panel">
+                            <h4><i class="fa fa-angle-right"></i> Registers</h4>
+                            <hr>
+                              <div class="scrollit">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>$</th>
+                                            <th>Value</th>
+                            
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr >
+                                            <td>$zero</td>
+                                            <td>0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$v0</td>
+                                            <td id="2">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$v1</td>
+                                            <td id="3">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$a0</td>
+                                            <td id="4">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$a1</td>
+                                            <td id="5">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$a2</td>
+                                            <td id="6">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$a3</td>
+                                            <td id="7">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t0</td>
+                                            <td id="8">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t1</td>
+                                            <td id="9">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$t2</td>
+                                            <td id="10">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t3</td>
+                                            <td id="11">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t4</td>
+                                            <td id="12">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$t5</td>
+                                            <td id="13">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t6</td>
+                                            <td id="14">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t7</td>
+                                            <td id="15">0</td>
+                                            
+                                        </tr>
+
+                                         <tr>
+                                            <td>$s0</td>
+                                            <td id="16">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$s1</td>
+                                            <td id="17">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$s2</td>
+                                            <td id="18">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$s3</td>
+                                            <td id="19">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$s4</td>
+                                            <td id="20">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$s5</td>
+                                            <td id="21">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$s6</td>
+                                            <td id="22">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$s7</td>
+                                            <td id="23">0</td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>$t8</td>
+                                            <td id="24">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$t9</td>
+                                            <td id="25">0</td>
+                                            
+                                        </tr>
+
+                                         <tr>
+                                            <td>$gp</td>
+                                            <td id="28">0</td>
+                                            
+                                        </tr>
+
+                                          <tr>
+                                            <td>$sp</td>
+                                            <td id="29">0</td>
+                                            
+                                        </tr>
+
+                                         <tr>
+                                            <td>$fp</td>
+                                            <td id="30">0</td>
+                                            
+                                        </tr>
+
+                                          <tr>
+                                            <td>$ra</td>
+                                            <td id="31">0</td>
+                                            
+                                        </tr>
+
+
+
+                                        <tr>
+                                            <td>$k0</td>
+                                            <td id="k0">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>$k1</td>
+                                            <td id="k1">0</td>
+                                            
+                                        </tr>
+                                      
+                                        <tr>
+                                            <td>hi</td>
+                                            <td id="hi">0</td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>lo</td>
+                                            <td id="lo">0</td>
+                                            
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                             </div>
+                        </div><! --/content-panel -->
+                    </div><!-- /col-md-12 -->
+                  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="row">
+                  
+                    
+                  <div class="col-lg-9 main-chart">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center"> 
+            
+            <tr style="height:27px"> 
+                
+                <td id="tab0" onclick="selectionTab('0');" style="width:55%;" class="primeiraTab" align="center"> 
+                    
+                    <label>Edit</label>
+                
+                </td> 
+                
+                <td id="tab1" onclick="selectionTab('1');" style="width:75%;" class="meioTab" align="center">
+                    
+                    
+    <label id="detalhesAlarmeTabLabel1" class="labelFormularioValor">Execute</label>
+                
+                </td>
+             
+                <td class="semTab" style="width:35%">  
+                
+                </td>
+            
+            </tr>
+            
+            <tr style="height:27px"> 
+                
+                <td align="center" colspan="6"> 
+                    
+                    <div id="contentTab0" class="divTab" style="overflow-y:auto;width:100%;display:none;">
+                        <table border="0" style="width:9%;" align="center">
+                            
+                            <tr style="height:2px">
+                                
+                                
+                            </tr> 
+                            
+                            <tr> 
+                                
+                                <td align="left" class="contentTab"> 
+                                 <textarea id= "comando-txt" rows="20" cols="106"></textarea>
+                                </td>
+                            
+                            </tr> 
+                        
+                        </table>
+                    
+                    </div> 
+                    
+                    <div id="contentTab1" class="divTab" style="overflow-y:auto;width:1000px;display:none;">
+                        
+                        <table border="0" style="width:99%;" align="center">
+                            
+                            <tr style="height:2px">
+                                
+                              
+                            </tr>
+                            
+                            <tr> 
+                                
+                                <td align="left" class="contentTab"> 
+                                    
+                                <table class="table" id="table-step">
+                                        <thead>
+                                        <tr>
+                                            <th>Address</th>
+                                            <th>Source</th>
+                            
+                                        </tr>
+                                        </thead>
+                                        <tbody id="adresses">
+                                       
+                                        </tbody>
+                                    </table> 
+                                </td> 
+                            
+                            </tr> 
+                        
+                        </table>
+                    
+                    </div>    
+                </td>
+            
+            </tr>
+</table> 
+<br>
+<br>
+
+<!-- ALTERAR LAYOUT AQUI -->
+                       <div id='memoryContent'>
+                            
+                        </div>
+
+                        <style>
+                            .divpar{
+                                color: #000
+                                border: 1px solid;
+                                background-color: rgb(223, 238, 255); 
+				border-top: 1px solid #000;
+				width:110px;
+	 			height:20px;
+                            }
+                            .divimpar{
+                                color: #000 
+                                border: 1px solid;
+                                border-top: 1px solid #000;
+				width:110px;
+				height:20px;
+				  
+                            }
+                        </style>
+
+                    <!-- ATÉ AQUI RS -->
+
+    <script language="javascript" type="text/javascript">
+        function setSize() { 
+            var myWidth = 0, myHeight = 0; 
+            var objContentTab0 = document.getElementById('contentTab0'); 
+            var objContentTab1 = document.getElementById('contentTab1'); 
+            
+            if (typeof (window.innerWidth) == 'number') { 
+                
+    //Non-IE myWidth = document.documentElement.clientWidth; 
+    myHeight = window.innerHeight; } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        //IE 6+ in 'standards compliant mode' myWidth = document.documentElement.clientWidth; 
+        myHeight = document.documentElement.clientHeight; } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) { 
+            //IE 4 compatible myWidth = document.body.clientWidth; 
+            myHeight = document.body.clientHeight;
+        }
+            objContentTab0.style.height = 380 + 'px';
+            objContentTab1.style.height = 380 + 'px';
+            
+            objContentTab1.style.width = 1060 + 'px';
+        } 
+        
+        function selectionTab(value) { 
+            
+            var objTab0 = document.getElementById('tab0');
+            var objTab1 = document.getElementById('tab1');
+            var objContentTab0 = document.getElementById('contentTab0');
+            var objContentTab1 = document.getElementById('contentTab1');
+            objTab0.style.background = 'url(./Imagens/gridtoolbar_back.gif)'; 
+            objTab1.style.background = 'url(./Imagens/gridtoolbar_back.gif)';
+            objTab0.style.borderBottom = '#A0C0E7 1px solid'; 
+            objTab1.style.borderBottom = '#A0C0E7 1px solid';
+            objContentTab0.style.display = 'none';
+            objContentTab1.style.display = 'none'; 
+            if (value == "0") {
+                objTab0.style.background = '#DFEEFF';
+                objTab0.style.borderBottom = '0px'; 
+                objContentTab0.style.display = 'block'; 
+            } else if (value == "1") {
+                objTab1.style.background = '#DFEEFF';
+                objTab1.style.borderBottom = '0px';
+                objContentTab1.style.display = 'block'; 
+            } 
+        } 
+        //A função é executada quando a página é carregada. 
+        //Colocando a altura das tags divs. //Selecionando a tab. 
+        function pageLoad() {
+            setSize();
+            selectionTab('0');
+        }
+        window.onload = pageLoad;
+        window.onresize = setSize;
+       
+
+        </script>
+
+
+
+                 
+                                
+                     <div class="col-lg-3 ds">
+                    <!--COMPLETED ACTIONS DONUTS CHART-->
+                         <h3>MESSAGES</h3>
+                           <!-- Fifth Action -->
+                           <div id="mensagens"></div>
+                      <div class="desc">
+
+                        
+                      </div>
+
+                       
+
+                    </div><!-- /row -->           
+                
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                  
+                  
+      <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+                  
+            
+              
+          </section>
+      </section>
+
+      <!--main content end-->
+      <!--footer start-->
+      
+      <!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="assets/js/sparkline-chart.js"></script>    
+	<script src="assets/js/zabuto_calendar.js"></script>	
+
+    <!--        Script code AA               -->
+
+     <script src="js/index.js"></script>
+    <script src="js/comandos.js"></script>
+    <script src="js/funcoes_html.js"></script>
+
+	
+	
+	
+	<script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+  
+
+  </body>
+</html>
